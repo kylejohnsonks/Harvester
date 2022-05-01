@@ -37,9 +37,6 @@ def readings_page():
 @app.route('/measurements/solution/<ph>/<tds>/<volume>')
 def add_solution_reading(ph,tds,volume):
 
-    
-
-    
     #with session, add record to sr table
     with Session(engine) as session:
         reading=sr(ph=ph,tds=tds,volume=volume,read_date=func.current_date())
@@ -54,6 +51,18 @@ def add_solution_reading(ph,tds,volume):
     # result = str('Successfully added measurement')
     result=(f"Successfully added measurement to solution readings: <br> pH={ph} <br> TDS={tds} <br> Volume={volume}")
     return jsonify(result)
+
+#Add plant type function
+
+
+#Add seed lot function
+
+
+#Add plant function
+
+#Add plant measurement function
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

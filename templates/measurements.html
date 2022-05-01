@@ -15,9 +15,8 @@
     
   <div class="container">
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="/readings">Bar</a>
-      <a class="navbar-brand" href="#gauge">Gauge</a>
-      <a class="navbar-brand" href="#bubble">Bubble</a>
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/measurements">Add Reading</a>
     </nav>  
     <div class="row">
     <!--  Jumbotron-->
@@ -32,11 +31,12 @@
         <div class="well">
           <h3>Solution Reading</h3>
           <label for="ph">pH: </label>
-          <input class="add_sr" type="text" inputmode="numeric" name="pH" placeholder="6.0" style="width: 60px;"> </input><br>
+          <input class="add_sr" type="text" inputmode="numeric" name="pH" placeholder="6.0" style="width: 60px;" required> </input><br>
           <label for="tds">TDS (mg/L): </label>
-          <input class="add_sr" type="text" inputmode="numeric" name="tds" placeholder="800" style="width:60px;"> </input><br>
+          <input class="add_sr" type="text" inputmode="numeric" name="tds" placeholder="800" style="width:60px;" required> </input><br>
           <label for="volume">Volume (L): </label>
-          <input class="add_sr" type="text" inputmode="numeric" name="volume" placeholder="30.0" style="width:60px;"> </input><br><br>
+          <input class="add_sr" type="text" inputmode="numeric" name="volume" placeholder="30.0" style="width:60px;" required> </input><br><br>
+
           <a class="btn btn-primary btn-md" id="add_sr_button" role="button">Add Reading</a>
         </div>
       </div>
@@ -49,18 +49,19 @@
         <div class="well">
           <h3>Plant Measurement</h3>
           <label for="plantID">Plant ID: </label>
-          <input class="MLData" type="text" inputmode="numeric" name="plantID" placeholder="1000" style="width: 60px;"> </input><br>
+          <input class="add_pm" type="text" inputmode="numeric" name="plantID" placeholder="1000" style="width: 60px;"> </input><br>
           <label for="size_x">Size X (mm): </label>
-          <input class="MLData" type="text" inputmode="numeric" name="size_x" placeholder="800" style="width:60px;"> </input><br>
+          <input class="add_pm" type="text" inputmode="numeric" name="size_x" placeholder="800" style="width:60px;"> </input><br>
           <label for="size_y">Size Y (mm): </label>
-          <input class="MLData" type="text" inputmode="numeric" name="size_y" placeholder="800" style="width:60px;"> </input><br>
+          <input class="add_pm" type="text" inputmode="numeric" name="size_y" placeholder="800" style="width:60px;"> </input><br>
           <label for="size_z">Size Z (mm): </label>
-          <input class="MLData" type="text" inputmode="numeric" name="size_z" placeholder="800" style="width:60px;"> </input><br>
+          <input class="add_pm" type="text" inputmode="numeric" name="size_z" placeholder="800" style="width:60px;"> </input><br>
           <label for="leaf_count">Leaf Count: </label>
-          <input class="MLData" type="text" inputmode="numeric" name="size_X" placeholder="800" style="width:60px;"> </input><br>
+          <input class="add_pm" type="text" inputmode="numeric" name="size_X" placeholder="800" style="width:60px;"> </input><br>
           <label for="harvest">Harvest Volume (g): </label>
-          <input class="MLData" type="text" inputmode="numeric" name="harvest" placeholder="800" style="width:60px;"> </input><br>
-          <a class="btn btn-primary btn-md" role="button">Add Measurement</a>
+          <input class="add_pm" type="text" inputmode="numeric" name="harvest" placeholder="800" style="width:60px;"> </input><br>
+
+          <a class="btn btn-primary btn-md" id="add_pm_button" role="button">Add Measurement</a>
         </div>      
       </div>
       </div>
@@ -70,7 +71,27 @@
       <div class="col-lg-4">
         <div class="well">
           <h3>New Plant</h3>
-          <a class="btn btn-primary btn-md" role="button">Add Plant</a>
+          <label for="seed_lot">Seed Lot: </label>
+          <input class="add_plant" type="text" inputmode="numeric" name="seed_lot" placeholder="300" style="width: 60px;"> </input><br>
+          <label for="plant_type_id">Plant Type ID: </label>
+          <input class="add_plant" type="text" name="plant_type_id" placeholder="200" style="width: 60px;"> </input><br>
+          <label for="location">Location: </label>
+          <input class="add_plant" type="text" inputmode="numeric" name="location" placeholder="10" style="width: 60px;"> </input><br>
+          <label for="germination_date">Germination Date: </label>
+          <input class="add_plant" type="date" name="germination_date" style="width: 120px;"> </input><br>
+
+          <b>Germination Failure: </b>
+          <label for="False">False</label>
+          <input class="add_plant" type="radio" name="germination_failure" id="False" value="False" style="width: 30px;"> </input>
+          <label for="True">True</label>
+          <input class="add_plant" type="radio" name="germination_failure" id="True" value="True" style="width: 30px;"> </input><br>
+
+
+
+          <label for="transfer_date">Transfer Date: </label>
+          <input class="add_plant" type="date" name="transfer_date" placeholder="1000" style="width: 120px;"> </input><br>
+
+          <a class="btn btn-primary btn-md" id="add_plant" role="button">Add Plant</a>
         </div>    
       </div>
       <div class="col-lg-4">
