@@ -1,0 +1,11 @@
+body {
+    background-color: hsl(110, 100%, 39%);  }
+.jumbotron {color: #FFFFFF;
+  background-color: hsl(110, 100%, 39%);
+  background-image: url("../images/greens.jpg");
+  background-repeat: repeat-x;
+  text-align: center;
+  text-shadow: black 1px 1px 30px;
+}
+#result {text-align: center; text-size-adjust: 400%; color: #38042F}
+  

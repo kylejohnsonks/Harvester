@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iHarvester</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="/readings">Bar</a>
+      <a class="navbar-brand" href="#gauge">Gauge</a>
+      <a class="navbar-brand" href="#bubble">Bubble</a>
+    </nav>  
+    <div class="row">
+    <!--  Jumbotron-->
+      <div class="col-md-12 jumbotron text-center"> 
+        <h1>iHarvester</h1>
+        <h4>Add Readings</h4>
+      </div>
+    </div>
+    <!--  First body row-->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well">
+          <h3>Solution Reading</h3>
+          <label for="ph">pH: </label>
+          <input class="add_sr" type="text" inputmode="numeric" name="pH" placeholder="6.0" style="width: 60px;"> </input><br>
+          <label for="tds">TDS (mg/L): </label>
+          <input class="add_sr" type="text" inputmode="numeric" name="tds" placeholder="800" style="width:60px;"> </input><br>
+          <label for="volume">Volume (L): </label>
+          <input class="add_sr" type="text" inputmode="numeric" name="volume" placeholder="30.0" style="width:60px;"> </input><br><br>
+          <a class="btn btn-primary btn-md" id="add_sr_button" role="button">Add Reading</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div id="result">
+          <h1>This is where the results go</h1>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="well">
+          <h3>Plant Measurement</h3>
+          <label for="plantID">Plant ID: </label>
+          <input class="MLData" type="text" inputmode="numeric" name="plantID" placeholder="1000" style="width: 60px;"> </input><br>
+          <label for="size_x">Size X (mm): </label>
+          <input class="MLData" type="text" inputmode="numeric" name="size_x" placeholder="800" style="width:60px;"> </input><br>
+          <label for="size_y">Size Y (mm): </label>
+          <input class="MLData" type="text" inputmode="numeric" name="size_y" placeholder="800" style="width:60px;"> </input><br>
+          <label for="size_z">Size Z (mm): </label>
+          <input class="MLData" type="text" inputmode="numeric" name="size_z" placeholder="800" style="width:60px;"> </input><br>
+          <label for="leaf_count">Leaf Count: </label>
+          <input class="MLData" type="text" inputmode="numeric" name="size_X" placeholder="800" style="width:60px;"> </input><br>
+          <label for="harvest">Harvest Volume (g): </label>
+          <input class="MLData" type="text" inputmode="numeric" name="harvest" placeholder="800" style="width:60px;"> </input><br>
+          <a class="btn btn-primary btn-md" role="button">Add Measurement</a>
+        </div>      
+      </div>
+      </div>
+    
+    <!-- Second body row -->
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="well">
+          <h3>New Plant</h3>
+          <a class="btn btn-primary btn-md" role="button">Add Plant</a>
+        </div>    
+      </div>
+      <div class="col-lg-4">
+        <div class="well">
+          <h3>New Seed Lot</h3>
+          <a class="btn btn-primary btn-md" role="button">Add Seed Lot</a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="well">
+          <h3>New Plant Type</h3>
+          <a class="btn btn-primary btn-md" role="button">Add Plant Type</a>
+        </div>
+      </div>
+
+    </div> 
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="static/js/app.js"></script>
+  
+
+</body>
+
+</html>
