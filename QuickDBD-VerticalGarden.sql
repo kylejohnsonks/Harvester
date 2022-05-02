@@ -6,7 +6,7 @@
 -- Table documentation comment 1 (try the PDF/RTF export)
 
 CREATE TABLE "solution_readings" (
-    "id" serial   NOT NULL,
+    "id" integer   NOT NULL,
     "ph" numeric   NOT NULL,
     -- Total dissolved solids (TDS) is measured as a volume of water with the unit milligrams per liter (mg/L), otherwise known as parts per million (ppm).
     "tds" numeric   NOT NULL,
@@ -19,19 +19,21 @@ CREATE TABLE "solution_readings" (
 );
 
 CREATE TABLE "plant_types" (
-    "id" serial   NOT NULL,
+    "id" integer   NOT NULL,
     "type" varchar   NOT NULL,
     "variety" varchar   NOT NULL,
     "description" varchar   NULL,
     "notes" varchar   NULL,
     "planting_instructions" varchar   NULL,
+    "ph" varchar NULL
+    "tds" varchar NULL
     CONSTRAINT "pk_plant_types" PRIMARY KEY (
         "id"
      )
 );
 
 CREATE TABLE "seed_lots" (
-    "id" serial   NOT NULL,
+    "id" integer   NOT NULL,
     "vendor" varchar   NULL,
     "order_date" date   NULL,
     "quantity" int   NULL,
@@ -44,9 +46,10 @@ CREATE TABLE "seed_lots" (
 );
 
 CREATE TABLE "plants" (
-    "id" serial   NOT NULL,
+    "id" integer   NOT NULL,
     "location" int   NOT NULL,
     "transfer_date" date   NULL,
+    "removal_date" date   NULL,
     "seedling_id" int   NOT NULL,
     CONSTRAINT "pk_plants" PRIMARY KEY (
         "id"
@@ -54,7 +57,7 @@ CREATE TABLE "plants" (
 );
 
 CREATE TABLE "plant_measurements" (
-    "id" serial   NOT NULL,
+    "id" integer   NOT NULL,
     "size_x" numeric   NOT NULL,
     "size_y" numeric   NOT NULL,
     "size_z" numeric   NOT NULL,
@@ -68,7 +71,7 @@ CREATE TABLE "plant_measurements" (
 );
 
 CREATE TABLE "seedlings" (
-    "id" serial   NOT NULL,
+    "id" integer   NOT NULL,
     "start_date" date   NOT NULL,
     "germination_date" date   NULL,
     "germination_faliure" boolean   NULL,

@@ -3,8 +3,7 @@
 from flask import Flask, render_template, redirect, session, jsonify
 import pandas as pd
 import sqlalchemy
-from sqlalchemy import create_engine
-from sqlalchemy import func, cast
+from sqlalchemy import create_engine, func, cast, select
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 
@@ -20,7 +19,12 @@ engine = create_engine(db_string)
 #create classes for tables
 Base = automap_base()
 Base.prepare(engine, reflect=True)
-sr=Base.classes.solution_readings 
+sr=Base.classes.solution_readings
+sl=Base.classes.seed_lots
+s=Base.classes.seedlings
+plants=Base.classes.plants
+pt=Base.classes.plant_types
+pm=Base.classes.plant_measurements
 
 # Define root
 @app.route('/')
@@ -56,7 +60,30 @@ def add_solution_reading(ph,tds,volume):
 
 
 #Add seed lot function
+@app.route('/measurements/seedlot/<vendor>/<order_date>/<quantity>/<price>/<product_url>/<plant_type_id>')
+def add_seed_lot(vendor,order_date,quantity,price,product_url,plant_type_id):
+    with Session(engine) as session:
+        seedlot=sl(
+            vendor=vendor,order_date=order_date,quantity=quantity,
+            price=price,product_url=product_url,
+            plant_type_id=plant_type_id
+        )
+        session.begin()
+        try:
+            session.add(seedlot)
+        except:
+            session.rollback()
+            raise
+        else:
+            session.commit()
 
+        for item in session.execute(select(func.max(sl.id))):
+            sl_id=item[0]
+
+    result=(f"Successfully added seed lot: {sl_id}")
+    return jsonify(result)
+
+#Add seedling function
 
 #Add plant function
 
