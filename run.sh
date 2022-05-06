@@ -1,0 +1,1 @@
+FLASK_APP=iharvester/app.py flask run
