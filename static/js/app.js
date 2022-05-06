@@ -1,14 +1,3 @@
-function test() {
-    let changedElement = d3.select(this);
-    // Save the value that was changed as a variable.
-    let changedValue = changedElement.property('value');
-    // Save the id of the filter that was changed as a variable.
-    let filterID = changedElement.attr('id');
-    console.log(changedValue);
-  // Attach an event to listen for changes to each filter
-}  
-d3.selectAll('input').on('change',test);
-
 //Add Solution Reading function 
 function add_sr(event) {
   // event.preventDefault();
@@ -29,7 +18,6 @@ function add_sr(event) {
     // .then(result => console.log(result))
     .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
   }
-
 //watch for Button click 
 d3.select("#add_sr_button").on("click", add_sr);
 
@@ -47,14 +35,12 @@ function add_sl(event) {
     url+=values[value]+'/';
   }
   url=url.slice(0,-1);
-  console.log(url)
   // window.location.href=url;
   fetch(url)
     .then(response => response.json())
     // .then(result => console.log(result))
     .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
   }
-
 //watch for Button click 
 d3.select("#add_sl_button").on("click", add_sl);
 

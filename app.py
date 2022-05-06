@@ -1,9 +1,12 @@
 
 # Import dependencies
+from unittest import result
+import datetime
+from datetime import date
 from flask import Flask, render_template, redirect, session, jsonify
 import pandas as pd
 import sqlalchemy
-from sqlalchemy import create_engine, func, cast, select
+from sqlalchemy import create_engine, func, cast, select, Table, MetaData
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 
@@ -15,6 +18,16 @@ app = Flask(__name__,template_folder='Templates')
 # add the code to create the connection to the PostgreSQL database
 db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/Harvester"
 engine = create_engine(db_string)
+
+
+# Get table metadata
+metadata_obj=MetaData()
+sr_meta=Table("solution_readings",metadata_obj,autoload_with=engine)
+sl_meta=Table("seed_lots",metadata_obj,autoload_with=engine)
+s_meta=Table("seedlings",metadata_obj,autoload_with=engine)
+plants_meta=Table("plants",metadata_obj,autoload_with=engine)
+pt_meta=Table("plant_types",metadata_obj,autoload_with=engine)
+pm_meta=Table("plant_measurements",metadata_obj,autoload_with=engine)
 
 #create classes for tables
 Base = automap_base()
@@ -30,6 +43,30 @@ pm=Base.classes.plant_measurements
 @app.route('/')
 def index():
     return render_template("index.html")
+
+# Route for solution chart
+@app.route('/solutionchart')
+def solution_chart():
+    stmt=select(sr_meta)
+    ph=[]
+    tds=[]
+    volume=[]
+    dates=[]
+    with Session(engine) as session:
+        for row in session.execute(stmt):
+            dates.append(row[4].strftime("%Y-%m-%d"))
+            ph.append(float(row[1]))
+            tds.append(int(row[2]))
+            volume.append(float(row[3]))
+
+    #test data
+    # xvals=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+   
+    #combine data into dict
+    all_data={'dates':dates,'ph':ph,'tds':tds,'volume':volume}
+
+    # return dict
+    return jsonify(all_data)
 
 #measurements button
 @app.route('/measurements')
