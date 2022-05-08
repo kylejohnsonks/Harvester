@@ -13,7 +13,7 @@ from sqlalchemy.ext.automap import automap_base
 # from config import db_password
 
 # Create a new Flask instance
-app = Flask(__name__,template_folder='Templates')
+app = Flask(__name__,template_folder='templates')
 
 # add the code to create the connection to the PostgreSQL database
 # db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/Harvester"
