@@ -17,7 +17,7 @@ app = Flask(__name__,template_folder='Templates')
 
 # add the code to create the connection to the PostgreSQL database
 # db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/Harvester"
-db_string = f"postgres://rxlnazlfqdjqhm:dc2988b7ebd2cb9b00146f1e2e61452e3b62332633d33e748cc8ee5b36834f30@ec2-52-200-215-149.compute-1.amazonaws.com:5432/dddgnv1vi3caf7"
+db_string = f"postgresql://rxlnazlfqdjqhm:dc2988b7ebd2cb9b00146f1e2e61452e3b62332633d33e748cc8ee5b36834f30@ec2-52-200-215-149.compute-1.amazonaws.com:5432/dddgnv1vi3caf7"
 engine = create_engine(db_string)
 
 
