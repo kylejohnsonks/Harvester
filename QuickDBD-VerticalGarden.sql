@@ -6,76 +6,76 @@
 -- Table documentation comment 1 (try the PDF/RTF export)
 
 CREATE TABLE "solution_readings" (
-    "id" integer   NOT NULL,
-    "ph" numeric   NOT NULL,
+    "id" integer   NULL,
+    "ph" numeric   NULL,
     -- Total dissolved solids (TDS) is measured as a volume of water with the unit milligrams per liter (mg/L), otherwise known as parts per million (ppm).
-    "tds" numeric   NOT NULL,
+    "tds" numeric   NULL,
     -- i.e. the amount of water in the tank in gallons
-    "volume" numeric   NOT NULL,
-    "read_date" date   NOT NULL,
+    "volume" numeric   NULL,
+    "read_date" date   NULL,
     CONSTRAINT "pk_solution_readings" PRIMARY KEY (
         "id"
      )
 );
 
 CREATE TABLE "plant_types" (
-    "id" integer   NOT NULL,
-    "type" varchar   NOT NULL,
-    "variety" varchar   NOT NULL,
+    "id" integer   NULL,
+    "type" varchar   NULL,
+    "variety" varchar   NULL,
     "description" varchar   NULL,
     "notes" varchar   NULL,
     "planting_instructions" varchar   NULL,
-    "ph" varchar NULL
-    "tds" varchar NULL
+    "ph" varchar NULL,
+    "tds" varchar NULL,
     CONSTRAINT "pk_plant_types" PRIMARY KEY (
         "id"
      )
 );
 
 CREATE TABLE "seed_lots" (
-    "id" integer   NOT NULL,
+    "id" integer   NULL,
     "vendor" varchar   NULL,
     "order_date" date   NULL,
     "quantity" int   NULL,
     "price" money   NULL,
     "product_url" varchar   NULL,
-    "plant_type_id" int   NOT NULL,
+    "plant_type_id" int   NULL,
     CONSTRAINT "pk_seed_lots" PRIMARY KEY (
         "id"
      )
 );
 
 CREATE TABLE "plants" (
-    "id" integer   NOT NULL,
-    "location" int   NOT NULL,
+    "id" integer   NULL,
+    "location" int   NULL,
     "transfer_date" date   NULL,
     "removal_date" date   NULL,
-    "seedling_id" int   NOT NULL,
+    "seedling_id" int   NULL,
     CONSTRAINT "pk_plants" PRIMARY KEY (
         "id"
      )
 );
 
 CREATE TABLE "plant_measurements" (
-    "id" integer   NOT NULL,
-    "size_x" numeric   NOT NULL,
-    "size_y" numeric   NOT NULL,
-    "size_z" numeric   NOT NULL,
+    "id" integer   NULL,
+    "size_x" numeric   NULL,
+    "size_y" numeric   NULL,
+    "size_z" numeric   NULL,
     "leaf_count" int   NULL,
-    "measurement_date" date   NOT NULL,
+    "measurement_date" date   NULL,
     "harvest_volume" numeric   NULL,
-    "plant_id" int   NOT NULL,
+    "plant_id" int   NULL,
     CONSTRAINT "pk_plant_measurements" PRIMARY KEY (
         "id"
      )
 );
 
 CREATE TABLE "seedlings" (
-    "id" integer   NOT NULL,
-    "start_date" date   NOT NULL,
+    "id" integer   NULL,
+    "start_date" date   NULL,
     "germination_date" date   NULL,
     "germination_faliure" boolean   NULL,
-    "seed_lot_id" int   NOT NULL,
+    "seed_lot_id" int   NULL,
     CONSTRAINT "pk_seedlings" PRIMARY KEY (
         "id"
      )
