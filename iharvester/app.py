@@ -10,7 +10,7 @@ from sqlalchemy import create_engine, func, cast, select, Table, MetaData
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 
-from app.config import db_password
+from config import db_password
 
 # Create a new Flask instance
 app = Flask(__name__,template_folder='templates')
