@@ -32,7 +32,7 @@ function init(){
             yaxis: 'y2'
         };
         var layout = {
-            title: 'Solution Readings',
+            title: 'Solution Readings - Past 30 Days',
             legend: {
                 orientation: "h",
                 valign: "top"

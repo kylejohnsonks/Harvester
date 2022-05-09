@@ -10,14 +10,14 @@ from sqlalchemy import create_engine, func, cast, select, Table, MetaData
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 
-# from config import db_password
+from config import db_password
 
 # Create a new Flask instance
 app = Flask(__name__,template_folder='templates')
 
 # add the code to create the connection to the PostgreSQL database
 # db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/Harvester"
-db_string = f"postgresql://rxlnazlfqdjqhm:dc2988b7ebd2cb9b00146f1e2e61452e3b62332633d33e748cc8ee5b36834f30@ec2-52-200-215-149.compute-1.amazonaws.com:5432/dddgnv1vi3caf7"
+db_string = f"postgresql://rxlnazlfqdjqhm:{db_password}@ec2-52-200-215-149.compute-1.amazonaws.com:5432/dddgnv1vi3caf7"
 engine = create_engine(db_string)
 
 
@@ -48,7 +48,7 @@ def index():
 # Route for solution chart
 @app.route('/solutionchart')
 def solution_chart():
-    stmt=select(sr_meta)
+    stmt=select(sr_meta).where(sr_meta.c.read_date > func.CURRENT_DATE()-30)
     ph=[]
     tds=[]
     volume=[]
