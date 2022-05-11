@@ -58,9 +58,6 @@ def solution_chart():
             ph.append(float(row[1]))
             tds.append(int(row[2]))
             volume.append(float(row[3]))
-
-    #test data
-    # xvals=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
    
     #combine data into dict
     all_data={'dates':dates,'ph':ph,'tds':tds,'volume':volume}
@@ -70,8 +67,22 @@ def solution_chart():
 
 #measurements button
 @app.route('/measurements')
-def readings_page():
-    return render_template("measurements.html")
+def measurements_page():
+    #get New seed lot drop down values
+    pt_ids=[]
+    pt_types=[]
+    pt_varieties=[]
+    stmt=select(pt_meta.c.id, pt_meta.c.type, pt_meta.c.variety).distinct()
+    with Session(engine) as session:
+        for row in session.execute(stmt):
+            pt_ids.append(row[0])
+            pt_types.append(row[1])
+            pt_varieties.append(row[2])
+   
+    #combine data into dict
+    dropdowns={'pt_ids':pt_ids,'pt_types':pt_types,'pt_varieties':pt_varieties}
+
+    return render_template("measurements.html",jsonify(dropdowns))
 
 
 #add solution reading function

@@ -134,8 +134,16 @@
           <input class="add_seed_lot" type="text" inputmode="numeric" name="price" placeholder="6.99" style="width:80px;"> </input><br>
           <label for="product_url">Product URL: </label>
           <input class="add_seed_lot" type="text" name="product_url" style="width: 400px;"> </input><br>
-          <label for="plant_type_id">Plant Type ID: </label>
-          <input class="add_seed_lot" type="text" inputmode="numeric" name="plant_type_id" style="width: 60px;"> </input><br>
+          <form>
+            <label>Plant Type</label>
+              <select class="add_seed_lot" id="plant_type">
+              </select>
+          </form>
+          <form>
+            <label>Plant Variety</label>
+              <select class="add_seed_lot" id="plant_variety">
+              </select>
+          </form>
 
           <a class="btn btn-primary btn-md" id="add_sl_button" role="button">Add Seed Lot</a>
         </div>

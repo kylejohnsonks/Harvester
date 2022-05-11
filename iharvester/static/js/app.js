@@ -44,6 +44,23 @@ function add_sl(event) {
 //watch for Button click 
 d3.select("#add_sl_button").on("click", add_sl);
 
+//Populate Drop down menus
+async function dropdowns(event) {
+  let response = await fetch('/solutionchart')
+  let dropdowns = await response.json()
+  console.log(dropdowns.pt_ids, dropdowns.pt_types, dropdowns.pt_varieties)
+
+  //build plant types options list
+  for (i=0; i < dropdowns.pt_types.length; i++){
+    var opt = document.createElement("option");
+    document.getElementById("plant_type").innerHTML += '<option id="' + i + '" value="' + dropdowns.pt_types[i] + '">'+dropdowns.pt_types[i]+'</option>';
+  }
+  //build plant varieties options list
+  for (i=0; i < dropdowns.pt_varieties.length; i++){
+    var opt = document.createElement("option");
+    document.getElementById("plant_variety").innerHTML += '<option id="' + i + '" value="' + dropdowns.pt_varieties[i] + '">'+dropdowns.pt_varieties[i]+'</option>';
+  }    
+}
 
 
 
@@ -54,8 +71,7 @@ d3.select("#add_sl_button").on("click", add_sl);
 
 
 
-
-
+d3.select(window).on("load", init)
 
 
 
