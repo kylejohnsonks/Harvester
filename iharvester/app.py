@@ -68,18 +68,12 @@ def solution_chart():
 @app.route('/dropdowns')
 #get New seed lot drop down values
 def dropdowns():
-    pt_ids=[]
     pt_types=[]
-    pt_varieties=[]
-    stmt=select(pt_meta.c.id, pt_meta.c.type, pt_meta.c.variety).distinct()
+    stmt=select(pt_meta.c.type).distinct()
     with Session(engine) as session:
         for row in session.execute(stmt):
-            pt_ids.append(row[0])
             pt_types.append(row[1])
-            pt_varieties.append(row[2])
-
-    #combine data into dict
-    dropdowns={'pt_ids':pt_ids,'pt_types':pt_types,'pt_varieties':pt_varieties}
+    dropdowns={'pt_types':pt_types}
     return (jsonify(dropdowns))
 
 #measurements button
