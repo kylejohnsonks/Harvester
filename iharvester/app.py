@@ -74,8 +74,7 @@ def dropdowns():
         for row in session.execute(stmt):
             pt_types.append(row[0])
     dropdowns={'pt_types':pt_types}
-    test='test'
-    return (jsonify(test))
+    return (jsonify(dropdowns))
 
 #measurements button
 @app.route('/measurements')
