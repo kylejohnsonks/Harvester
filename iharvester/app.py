@@ -72,7 +72,7 @@ def dropdowns():
     stmt=select(pt_meta.c.type).distinct()
     with Session(engine) as session:
         for row in session.execute(stmt):
-            pt_types.append(row[1])
+            pt_types.append(row[0])
     dropdowns={'pt_types':pt_types}
     return (jsonify(dropdowns))
 
