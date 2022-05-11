@@ -48,7 +48,7 @@ d3.select("#add_sl_button").on("click", add_sl);
 async function dropdowns(event) {
   let response = await fetch('/dropdowns')
   let dropdowns = await response.json()
-  console.log(dropdowns.pt_types)
+  console.log(dropdowns)
 
   //build plant types options list
   for (i=0; i < dropdowns.pt_types.length; i++){
