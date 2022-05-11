@@ -46,7 +46,7 @@ d3.select("#add_sl_button").on("click", add_sl);
 
 //Populate Drop down menus
 async function dropdowns(event) {
-  let response = await fetch('/solutionchart')
+  let response = await fetch('/dropdowns')
   let dropdowns = await response.json()
   console.log(dropdowns.pt_ids, dropdowns.pt_types, dropdowns.pt_varieties)
 
@@ -61,17 +61,8 @@ async function dropdowns(event) {
     document.getElementById("plant_variety").innerHTML += '<option id="' + i + '" value="' + dropdowns.pt_varieties[i] + '">'+dropdowns.pt_varieties[i]+'</option>';
   }    
 }
-
-
-
-
-
-
-
-
-
-
-d3.select(window).on("load", init)
+//fetch dropdown info on page load
+d3.select(window).on("load", dropdowns)
 
 
 
