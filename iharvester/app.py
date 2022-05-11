@@ -69,7 +69,8 @@ def solution_chart():
 #get New seed lot drop down values
 def dropdowns():
     pt_types=[]
-    stmt=select(pt_meta.c.type).distinct().order_by(pt_meta.c.type)
+    # stmt=select(pt_meta.c.type).distinct().order_by(pt_meta.c.type)
+    stmt=select(pt_meta.c.type)
     with Session(engine) as session:
         for row in session.execute(stmt):
             pt_types.append(row[0])
