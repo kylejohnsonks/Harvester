@@ -20,13 +20,15 @@ async function dropdowns(event) {
   for (i=0; i < dropdowns.plant_ids.length; i++){
     var opt = document.createElement("option");
     document.getElementById("plantID").innerHTML += '<option id="' + i + '" value="' + dropdowns.plant_ids[i] + '">'+dropdowns.plant_ids[i]+'</option>';
-  };  
+  };
+  plant_variety()  
   }
 // 
 //fetch dropdown info on page load
 d3.select(window).on("load", dropdowns)
 
 async function plant_variety(event) {
+  document.getElementById("plant_variety").innerHTML = '';
   url='/dropdowns/' + document.getElementById("plant_type").value;
   console.log('url is '+url)
   let response = await fetch(url);
@@ -35,7 +37,6 @@ async function plant_variety(event) {
 
   for (i=0; i < dropdown_plant_variety.length; i++){
     var opt = document.createElement("option");
-    document.getElementById("plant_variety").innerHTML = '';
     document.getElementById("plant_variety").innerHTML += '<option id="' + i + '" value="' + dropdown_plant_variety[i] + '">'+dropdown_plant_variety[i]+'</option>';
   };   
 }
