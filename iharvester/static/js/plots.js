@@ -3,7 +3,7 @@ function init(){
     async function chartdata(){
         let response = await fetch('/solutionchart')
         let allData = await response.json()
-        console.log(allData.dates)
+        // console.log(allData.dates)
 
         var ph = {
             x: allData.dates,
