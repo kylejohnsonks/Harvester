@@ -74,8 +74,8 @@ function init(){
         // Use Plotly to plot the data with the layout. 
         Plotly.newPlot("solution_chart",allTraces, layout)
     }
-
-    chartdata()      
+    chartdata()
+         
 
 };
 

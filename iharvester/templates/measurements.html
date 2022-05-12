@@ -48,6 +48,10 @@
       <div class="col-md-4">
         <div class="well">
           <h3>Plant Measurement</h3>
+          <form>
+            <label>Plant ID</label>
+              <select class="add_pm" id="plantID"></select>
+          </form>
           <label for="plantID">Plant ID: </label>
           <input class="add_pm" type="text" inputmode="numeric" name="plantID" placeholder="1000" style="width: 60px;"> </input><br>
           <label for="size_x">Size X (mm): </label>
@@ -71,6 +75,10 @@
       <div class="col-lg-6">
         <div class="well">
           <h3>New Seedling</h3>
+          <form>
+            <label>Seed Lot ID</label>
+              <select class="add_seedling" id="seed_lot_id"></select>
+          </form>
           <label for="germination_date">Germination Date: </label>
           <input class="add_seedling" type="date" name="germination_date" style="width: 120px;"> </input><br>
           <b>Germination Failure: </b>
@@ -78,8 +86,7 @@
           <input class="add_seedling" type="radio" name="germination_failure" id="False" value="False" style="width: 30px;"> </input>
           <label for="True">True</label>
           <input class="add_seedling" type="radio" name="germination_failure" id="True" value="True" style="width: 30px;"> </input><br>
-          <label for="seed_lot_id">Seed Lot ID: (dropdown?)</label>
-          <input class="add_seedling" type="text" inputmode="numeric" name="seed_lot_id" placeholder="300" style="width: 60px;"> </input><br>
+
           <a class="btn btn-primary btn-md" id="add_seedling_button" role="button">Add/Update Seedling</a>
         </div>
       </div>
@@ -87,12 +94,15 @@
       <div class="col-lg-6">
         <div class="well">
           <h3>New Plant</h3>
+          <form>
+            <label>Seedling ID</label>
+              <select class="add_plant" id="seedling_id"></select>
+          </form>
           <label for="location">Location: </label>
           <input class="add_plant" type="text" inputmode="numeric" name="location" placeholder="1" style="width: 60px;"> </input><br>
           <label for="transfer_date">Transfer Date: </label>
           <input class="add_plant" type="date" name="transfer_date" placeholder="1000" style="width: 120px;"> </input><br>
-          <label for="seedling_id">Seedling ID: </label>
-          <input class="add_plant" type="text" name="seedling_id" placeholder="200" style="width: 60px;"> </input><br>
+
           <a class="btn btn-primary btn-md" id="add_plant_button" role="button">Add Plant</a>
         </div>   
       </div>

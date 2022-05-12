@@ -69,12 +69,36 @@ def solution_chart():
 #get New seed lot drop down values
 def dropdowns():
     pt_types=[]
+    sl_ids=[]
+    s_ids=[]
+    plant_ids=[]
     stmt=select(pt_meta.c.type).distinct().order_by(pt_meta.c.type)
     with Session(engine) as session:
         for row in session.execute(stmt):
             pt_types.append(row[0])
-    dropdowns={'pt_types':pt_types}
+    
+    #new seedling, seed lot IDs
+    stmt=select(sl_meta.c.id).order_by(sl_meta.c.id)
+    with Session(engine) as session:
+        for row in session.execute(stmt):
+            sl_ids.append(row[0])
+        
+    #New plant, seedling ID
+    stmt=select(s_meta.c.id).order_by(s_meta.c.id)
+    with Session(engine) as session:
+        for row in session.execute(stmt):
+            s_ids.append(row[0])
+
+    #plant Measurement, plant ID
+    stmt=select(plants_meta.c.id).order_by(plants_meta.c.id)
+    with Session(engine) as session:
+        for row in session.execute(stmt):
+            plant_ids.append(row[0])
+
+    dropdowns={'pt_types':pt_types,'sl_ids':sl_ids,'s_ids':s_ids,'plant_ids':plant_ids}
     return (jsonify(dropdowns))
+
+
 
 #measurements button
 @app.route('/measurements')

@@ -55,6 +55,18 @@ async function dropdowns(event) {
     var opt = document.createElement("option");
     document.getElementById("plant_type").innerHTML += '<option id="' + i + '" value="' + dropdowns.pt_types[i] + '">'+dropdowns.pt_types[i]+'</option>';
   };
+  for (i=0; i < dropdowns.sl_ids.length; i++){
+    var opt = document.createElement("option");
+    document.getElementById("seed_lot_id").innerHTML += '<option id="' + i + '" value="' + dropdowns.sl_ids[i] + '">'+dropdowns.sl_ids[i]+'</option>';
+  };
+  for (i=0; i < dropdowns.s_ids.length; i++){
+    var opt = document.createElement("option");
+    document.getElementById("seedling_id").innerHTML += '<option id="' + i + '" value="' + dropdowns.s_ids[i] + '">'+dropdowns.s_ids[i]+'</option>';
+  };
+  for (i=0; i < dropdowns.plant_ids.length; i++){
+    var opt = document.createElement("option");
+    document.getElementById("plantID").innerHTML += '<option id="' + i + '" value="' + dropdowns.plant_ids[i] + '">'+dropdowns.plant_ids[i]+'</option>';
+  };  
   }
 // 
 //fetch dropdown info on page load
