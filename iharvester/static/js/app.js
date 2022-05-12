@@ -35,6 +35,7 @@ async function plant_variety(event) {
 
   for (i=0; i < dropdown_plant_variety.length; i++){
     var opt = document.createElement("option");
+    document.getElementById("plant_variety").innerHTML = '';
     document.getElementById("plant_variety").innerHTML += '<option id="' + i + '" value="' + dropdown_plant_variety[i] + '">'+dropdown_plant_variety[i]+'</option>';
   };   
 }
