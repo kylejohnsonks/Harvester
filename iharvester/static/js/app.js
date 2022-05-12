@@ -28,6 +28,7 @@ d3.select(window).on("load", dropdowns)
 
 async function plant_variety(event) {
   url='/dropdowns/' + document.getElementById("plant_type").value; //find value of plant type dropdown;
+  console.log('url is '+url)
   let response = await fetch(url);
   let dropdown_plant_variety = await response.json();
   console.log(dropdown_plant_variety);
@@ -37,7 +38,7 @@ async function plant_variety(event) {
     document.getElementById("plantID").innerHTML += '<option id="' + i + '" value="' + dropdowns.plant_ids[i] + '">'+dropdowns.plant_ids[i]+'</option>';
   };   
 }
-d3.select('plant_type').on('change',plant_variety);
+d3.select('#plant_type').on('change',plant_variety);
 
 //Add Solution Reading function 
 function add_sr(event) {
