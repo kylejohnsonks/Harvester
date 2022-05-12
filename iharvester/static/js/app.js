@@ -71,11 +71,3 @@ async function dropdowns(event) {
 // 
 //fetch dropdown info on page load
 d3.select(window).on("load", dropdowns)
-
-
-//build plant varieties options list
-//   for (i=0; i < dropdowns.pt_varieties.length; i++){
-//     var opt = document.createElement("option");
-//     document.getElementById("plant_variety").innerHTML += '<option id="' + i + '" value="' + dropdowns.pt_varieties[i] + '">'+dropdowns.pt_varieties[i]+'</option>';
-//   }    
-// }
