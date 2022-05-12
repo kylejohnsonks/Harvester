@@ -1,47 +1,47 @@
-type,variety,description,notes,planting_instructions,ph,tds
-Watermelon,Mini Love,,,,5.8,1260-1680
-Watermelon,Sugar Baby,,,,5.8,1260-1680
-Bean-Bush,Commodore Improved,,,,6,1400-1800
-Bean-Bush,Kentucky Wonder,,,,6,1400-1800
-Bean-Bush,Blue Lake 274,,,,6,1400-1800
-Pea,Dward White Sugar,,,,6-7,580-1260
-Pea,Thomas Laxton,,,,6-7,580-1260
-Pea,Wando,,,,6-7,580-1260
-Spinach,Space,,,,5.5-6.5,1260-1610
-Spinach,Lakeside,,,,5.5-6.5,1260-1610
-Spinach,New Zeland,,,,5.5-6.5,1260-1610
-Spinach,Nobel Giant,,,,5.5-6.5,1260-1610
-Spinach,Olympia,,,,5.5-6.5,1260-1610
-Lettuce,Iceberg,,,,5.5-6.5,600-800
-Lettuce,Green Oakleaf,,,,5.5-6.5,600-800
-Lettuce,Black Seeded Simpson,,,,5.5-6.5,600-800
-Lettuce,Salad Bowl Greens,,,,5.5-6.5,600-800
-Lettuce,Buttercrunch,,,,5.5-6.5,600-800
-Lettuce,White Boston,,,,5.5-6.5,600-800
-Lettuce,Little Gem,,,,5.5-6.5,600-800
-Lettuce,Bronze Mignoette,,,,5.5-6.5,600-800
-Lettuce,Bibb,,,,5.5-6.5,600-800
-Lettuce,Four Seasons,,,,5.5-6.5,600-800
-Lettuce,Cimarron,,,,5.5-6.5,600-800
-Lettuce,Prizehead,,,,5.5-6.5,600-800
-Tomato,Tiny Tim,,,,5.5-6.5,1400-3500
-Tomato,Small Red Cherry,,,,5.5-6.5,1400-3500
-Herb,Cilantro,,,,6.5-6.7,910-1260
-Herb,Chervil,,also called French Parsley,,5.5-6.0,560-1260
-Herb,Basil - Sweet,,,,5.5-6.5,700-1120
-Herb,Chives - Garlic,,,,6-6.5,1260-1680
-Herb,Chives,,,,6-6.5,1260-1680
-Herb,Parsley - Curled,,,,5.5-6.0,560-1260
-Herb,Parsley - Italian,,,,5.5-6.0,560-1260
-Herb,Dill,,,,5.8-6.5,
-Herb,Fennel,,,,6.4-6.8,700-980
-Herb,Mint,,,,5.5-6.0,1400-1680
-Herb,Peppermint,,,,5.5-6.0,1400-1680
-Herb,Lemon Balm,,,,5.5-6.5,700-1120
-Herb,Lemon Mint,,,,5.5-6.0,1400-1680
-Herb,Lavender,,,,6.4-6.8,700-980
-Herb,Bergamot,,,,,
-Herb,Chamomile,,,,,
-Herb,Purple Coneflower,,,,,
-Herb,Catnip,,,,,
-Strawberry,Everbearing,,,,5.0-5.5,1260-1610
+ID,type,variety,description,notes,planting_instructions,ph,tds
+10,Watermelon,Mini Love,,,,5.8,1260-1680
+11,Watermelon,Sugar Baby,,,,5.8,1260-1680
+12,Bean-Bush,Commodore Improved,,,,6,1400-1800
+13,Bean-Bush,Kentucky Wonder,,,,6,1400-1800
+14,Bean-Bush,Blue Lake 274,,,,6,1400-1800
+15,Pea,Dward White Sugar,,,,6-7,580-1260
+16,Pea,Thomas Laxton,,,,6-7,580-1260
+17,Pea,Wando,,,,6-7,580-1260
+18,Spinach,Space,,,,5.5-6.5,1260-1610
+19,Spinach,Lakeside,,,,5.5-6.5,1260-1610
+20,Spinach,New Zeland,,,,5.5-6.5,1260-1610
+21,Spinach,Nobel Giant,,,,5.5-6.5,1260-1610
+22,Spinach,Olympia,,,,5.5-6.5,1260-1610
+23,Lettuce,Iceberg,,,,5.5-6.5,600-800
+24,Lettuce,Green Oakleaf,,,,5.5-6.5,600-800
+25,Lettuce,Black Seeded Simpson,,,,5.5-6.5,600-800
+26,Lettuce,Salad Bowl Greens,,,,5.5-6.5,600-800
+27,Lettuce,Buttercrunch,,,,5.5-6.5,600-800
+28,Lettuce,White Boston,,,,5.5-6.5,600-800
+29,Lettuce,Little Gem,,,,5.5-6.5,600-800
+30,Lettuce,Bronze Mignoette,,,,5.5-6.5,600-800
+31,Lettuce,Bibb,,,,5.5-6.5,600-800
+32,Lettuce,Four Seasons,,,,5.5-6.5,600-800
+33,Lettuce,Cimarron,,,,5.5-6.5,600-800
+34,Lettuce,Prizehead,,,,5.5-6.5,600-800
+35,Tomato,Tiny Tim,,,,5.5-6.5,1400-3500
+36,Tomato,Small Red Cherry,,,,5.5-6.5,1400-3500
+37,Herb,Cilantro,,,,6.5-6.7,910-1260
+38,Herb,Chervil,,also called French Parsley,,5.5-6.0,560-1260
+39,Herb,Basil - Sweet,,,,5.5-6.5,700-1120
+40,Herb,Chives - Garlic,,,,6-6.5,1260-1680
+41,Herb,Chives,,,,6-6.5,1260-1680
+42,Herb,Parsley - Curled,,,,5.5-6.0,560-1260
+43,Herb,Parsley - Italian,,,,5.5-6.0,560-1260
+44,Herb,Dill,,,,5.8-6.5,
+45,Herb,Fennel,,,,6.4-6.8,700-980
+46,Herb,Mint,,,,5.5-6.0,1400-1680
+47,Herb,Peppermint,,,,5.5-6.0,1400-1680
+48,Herb,Lemon Balm,,,,5.5-6.5,700-1120
+49,Herb,Lemon Mint,,,,5.5-6.0,1400-1680
+50,Herb,Lavender,,,,6.4-6.8,700-980
+51,Herb,Bergamot,,,,,
+52,Herb,Chamomile,,,,,
+53,Herb,Purple Coneflower,,,,,
+54,Herb,Catnip,,,,,
+55,Strawberry,Everbearing,,,,5.0-5.5,1260-1610
