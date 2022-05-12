@@ -27,15 +27,15 @@ async function dropdowns(event) {
 d3.select(window).on("load", dropdowns)
 
 async function plant_variety(event) {
-  url='/dropdowns/' + document.getElementById("plant_type").value; //find value of plant type dropdown;
+  url='/dropdowns/' + document.getElementById("plant_type").value;
   console.log('url is '+url)
   let response = await fetch(url);
   let dropdown_plant_variety = await response.json();
   console.log(dropdown_plant_variety);
 
-  for (i=0; i < dropdowns.plant_ids.length; i++){
+  for (i=0; i < dropdown_plant_variety.length; i++){
     var opt = document.createElement("option");
-    document.getElementById("plantID").innerHTML += '<option id="' + i + '" value="' + dropdowns.plant_ids[i] + '">'+dropdowns.plant_ids[i]+'</option>';
+    document.getElementById("plantID").innerHTML += '<option id="' + i + '" value="' + dropdown_plant_variety[i] + '">'+dropdown_plant_variety[i]+'</option>';
   };   
 }
 d3.select('#plant_type').on('change',plant_variety);
