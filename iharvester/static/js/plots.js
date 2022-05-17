@@ -55,7 +55,7 @@ function init(){
                 side: 'left',
                 // anchor: 'free',
                 position: .05,
-                range: [6,10],
+                range: [10,60],
                 color: '7ED321',
                 showgrid: false  
             },
