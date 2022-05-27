@@ -41,8 +41,10 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div id="result">
-          <h1>This is where the results go</h1>
+        <div class="well">
+          <div id="result">
+            <h1>Result:</h1>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
@@ -70,26 +72,28 @@
     
     <!-- Second body row -->
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-4">
         <div class="well">
           <h3>New Seedling</h3>
           <form>
             <label>Seed Lot ID</label>
             <select class="add_seedling" id="seed_lot_id"></select>
           </form>
-          <label for="germination_date">Germination Date: </label>
-          <input class="add_seedling" type="date" name="germination_date" style="width: 120px;"> </input><br>
-          <b>Germination Failure: </b>
-          <label for="False">False</label>
-          <input class="add_seedling" type="radio" name="germination_failure" id="False" value="False" style="width: 30px;"> </input>
-          <label for="True">True</label>
-          <input class="add_seedling" type="radio" name="germination_failure" id="True" value="True" style="width: 30px;"> </input><br>
 
-          <a class="btn btn-primary btn-md" id="add_seedling_button" role="button">Add/Update Seedling</a>
+          <a class="btn btn-primary btn-md" id="add_seedling_button" role="button">Add Seedling</a>
         </div>
       </div>
-
-      <div class="col-lg-6">
+      <div class="col-lg-4">
+        <div class="well">
+          <b>Germinated: </b>
+          <label for="False">False</label>
+          <input class="add_seedling" type="radio" name="germinated" id="False" value="False" style="width: 30px;"> </input>
+          <label for="True">True</label>
+          <input class="add_seedling" type="radio" name="germinated" id="True" value="True" style="width: 30px;"> </input><br>
+          <a class="btn btn-primary btn-md" id="update_seedling_button" role="button">Update Seedling</a>
+        </div>            
+      </div>          
+      <div class="col-lg-4">
         <div class="well">
           <h3>New Plant</h3>
           <form>

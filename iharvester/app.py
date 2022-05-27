@@ -47,6 +47,11 @@ pm=Base.classes.plant_measurements
 def index():
     return render_template("index.html")
 
+#measurements button
+@app.route('/measurements')
+def measurements_page():
+    return render_template("measurements.html")
+
 # Route for solution chart
 @app.route('/solutionchart')
 def solution_chart():
@@ -101,6 +106,7 @@ def dropdowns():
     dropdowns={'pt_types':pt_types,'sl_ids':sl_ids,'s_ids':s_ids,'plant_ids':plant_ids}
     return (jsonify(dropdowns))
 
+#create list of varieties for given plant type
 @app.route('/dropdowns/<plant_variety>')
 def dropdown_plant_variety(plant_variety):
     dropdown_plant_variety=[]
@@ -110,12 +116,6 @@ def dropdown_plant_variety(plant_variety):
             dropdown_plant_variety.append(row[0])
 
     return (jsonify(dropdown_plant_variety))
-
-#measurements button
-@app.route('/measurements')
-def measurements_page():
-    return render_template("measurements.html")
-
 
 #add solution reading function
 @app.route('/measurements/solution/<ph>/<tds>/<volume>')
