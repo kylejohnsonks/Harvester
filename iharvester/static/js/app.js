@@ -12,6 +12,10 @@ async function dropdowns(event) {
     var opt = document.createElement("option");
     document.getElementById("seed_lot_id").innerHTML += '<option id="' + i + '" value="' + dropdowns.sl_ids[i] + '">'+dropdowns.sl_ids[i]+'</option>';
   };
+  for (i=0; i < dropdowns.s_update_ids.length; i++){
+    var opt = document.createElement("option");
+    document.getElementById("update_seedling_id").innerHTML += '<option id="' + i + '" value="' + dropdowns.s_ids[i] + '">'+dropdowns.s_ids[i]+'</option>';
+  };
   for (i=0; i < dropdowns.s_ids.length; i++){
     var opt = document.createElement("option");
     document.getElementById("seedling_id").innerHTML += '<option id="' + i + '" value="' + dropdowns.s_ids[i] + '">'+dropdowns.s_ids[i]+'</option>';
