@@ -179,7 +179,7 @@ def add_seedling(seed_lot_id):
         for item in session.execute(select(func.max(s.id))):
             s_id=item[0]
     result=(f"Successfully added seedling: {s_id}")
-
+    return jsonify(result)
 
 #Update Seedling Function
 
