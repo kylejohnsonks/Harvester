@@ -78,9 +78,10 @@ def solution_chart():
 def dropdowns():
     pt_types=[]
     sl_ids=[]
-    # s_update_ids=[]
+    s_update_ids=[]
     s_ids=[]
     plant_ids=[]
+    #plant types
     stmt=select(pt_meta.c.type).distinct().order_by(pt_meta.c.type)
     with Session(engine) as session:
         for row in session.execute(stmt):
@@ -93,10 +94,10 @@ def dropdowns():
             sl_ids.append(row[0])
 
     # #Update seedling, seedling IDs
-    # stmt=select(s_meta.c.id).where(s_meta.c.germinated== None).order_by(s_meta.c.id)
-    # with Session(engine) as session:
-    #     for row in session.execute(stmt):
-    #         s_update_ids.append(row[0])
+    stmt=select(s_meta.c.id).where(s_meta.c.germinated== None).order_by(s_meta.c.id)
+    with Session(engine) as session:
+        for row in session.execute(stmt):
+            s_update_ids.append(row[0])
 
     # #New plant, seedling ID
     stmt=select(s_meta.c.id).where(s_meta.c.germinated=='true').order_by(s_meta.c.id)
@@ -110,7 +111,7 @@ def dropdowns():
         for row in session.execute(stmt):
             plant_ids.append(row[0])
 
-    dropdowns={'pt_types':pt_types,'sl_ids':sl_ids,'s_ids':s_ids,'plant_ids':plant_ids}
+    dropdowns={'pt_types':pt_types,'sl_ids':sl_ids,'s_update_ids':s_update_ids,'s_ids':s_ids,'plant_ids':plant_ids}
     return (jsonify(dropdowns))
 
 #create list of varieties for given plant type
