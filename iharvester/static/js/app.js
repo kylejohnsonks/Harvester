@@ -2,7 +2,6 @@
 async function dropdowns(event) {
   let response = await fetch('/dropdowns');
   let dropdowns = await response.json();
-  // console.log(dropdowns)
 
   //build plant types options list
   for (i=0; i < dropdowns.pt_types.length; i++){
@@ -30,10 +29,8 @@ d3.select(window).on("load", dropdowns)
 async function plant_variety(event) {
   document.getElementById("plant_variety").innerHTML = '';
   url='/dropdowns/' + document.getElementById("plant_type").value;
-  console.log('url is '+url)
   let response = await fetch(url);
   let dropdown_plant_variety = await response.json();
-  console.log(dropdown_plant_variety);
 
   for (i=0; i < dropdown_plant_variety.length; i++){
     var opt = document.createElement("option");
@@ -49,17 +46,15 @@ function add_sr(event) {
   for (const feature of [].slice.call(document.getElementsByClassName("add_sr"))){
     values.push(feature.value);
   }
-  // console.log(values);
   url = '/measurements/solution';
   for (const value in values) {
     url+=values[value]+'/';
   }
   url=url.slice(0,-1);
-  console.log(url);
+
   // window.location.href=url;
   fetch(url)
     .then(response => response.json())
-    // .then(result => console.log(result))
     .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
   }
 //watch for Button click 
@@ -80,7 +75,6 @@ function add_sl(event) {
   // window.location.href=url;
   fetch(url)
     .then(response => response.json())
-    // .then(result => console.log(result))
     .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
   }
 //watch for Button click 
@@ -97,9 +91,10 @@ function add_s(event) {
     url+=values[value]+'/';
   }
   url=url.slice(0,-1);
+  console.log('url is '+url)
   fetch(url)
     .then(response => response.json())
     .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
 }
 //Watch for Add Seedling button click
-d3.select("add_seedling_button").on("click",add_s)
+d3.select("#add_seedling_button").on("click",add_s)
