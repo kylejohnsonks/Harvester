@@ -92,17 +92,17 @@ def dropdowns():
         for row in session.execute(stmt):
             sl_ids.append(row[0])
 
-    #Update seedling, seedling IDs
-    stmt=select(s_meta.c.id).where(s_meta.c.germinated='').order_by(s_meta.c.id)
-    with Session(engine) as session:
-        for row in session.execute(stmt):
-            s_update_ids.append(row[0])
+    # #Update seedling, seedling IDs
+    # stmt=select(s_meta.c.id).where(s_meta.c.germinated='').order_by(s_meta.c.id)
+    # with Session(engine) as session:
+    #     for row in session.execute(stmt):
+    #         s_update_ids.append(row[0])
 
-    #New plant, seedling ID
-    stmt=select(s_meta.c.id).where(s_meta.c.germinated='True').order_by(s_meta.c.id)
-    with Session(engine) as session:
-        for row in session.execute(stmt):
-            s_ids.append(row[0])
+    # #New plant, seedling ID
+    # stmt=select(s_meta.c.id).where(s_meta.c.germinated='True').order_by(s_meta.c.id)
+    # with Session(engine) as session:
+    #     for row in session.execute(stmt):
+    #         s_ids.append(row[0])
 
     #plant Measurement, plant ID
     stmt=select(plants_meta.c.id).order_by(plants_meta.c.id)
