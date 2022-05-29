@@ -117,6 +117,7 @@ def dropdown_plant_variety(plant_variety):
 
     return (jsonify(dropdown_plant_variety))
 
+#MEASUREMENT FUNCTIONS
 #add solution reading function
 @app.route('/measurements/solution/<ph>/<tds>/<volume>')
 def add_solution_reading(ph,tds,volume):
@@ -164,6 +165,23 @@ def add_seed_lot(vendor,order_date,quantity,price,product_url,plant_type_id):
     return jsonify(result)
 
 #Add seedling function
+@app.route('/measurements/seedlingadd/<seed_lot_id>')
+def add_seedling(seed_lot_id):
+    with Session(engine) as session:
+        add_seedling=s(start_date=func.current_date(), seed_lot_id=seed_lot_id)
+        session.begin()
+        try:
+            session.add(add_seedling)
+        except:
+            session.rollback()
+        else:
+            session.commit()
+        for item in session.execute(select(func.max(s.id))):
+            s_id=item[0]
+    result=(f"Successfully added seedling: {s_id}")
+#Update Seedling Function
+
+
 
 #Add plant function
 

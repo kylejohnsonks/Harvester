@@ -68,12 +68,10 @@ d3.select("#add_sr_button").on("click", add_sr);
 
 //Add Seed Lot function 
 function add_sl(event) {
-  // event.preventDefault();
   let values = [];
   for (const feature of [].slice.call(document.getElementsByClassName("add_seed_lot"))){
     values.push(feature.value);
   }
-  // console.log(values);
   url = '/measurements/seedlot/';
   for (const value in values) {
     url+=values[value]+'/';
@@ -87,3 +85,8 @@ function add_sl(event) {
   }
 //watch for Button click 
 d3.select("#add_sl_button").on("click", add_sl);
+
+//Add seedling function
+function add_s(event) {
+
+}
