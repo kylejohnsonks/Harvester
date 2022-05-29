@@ -88,5 +88,18 @@ d3.select("#add_sl_button").on("click", add_sl);
 
 //Add seedling function
 function add_s(event) {
-
+  let values = [];
+  for (const feature of [].slice.call(document.getElementsByClassName("add_seedling"))){
+    values.push(feature.value);
+  }
+  url = '/measurements/seedlingadd/';
+  for (const value in values) {
+    url+=values[value]+'/';
+  }
+  url=url.slice(0,-1);
+  fetch(url)
+    .then(response => response.json())
+    .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
 }
+//Watch for Add Seedling button click
+d3.select("add_seedling_button").on("click",add_s)

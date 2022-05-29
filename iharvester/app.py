@@ -179,14 +179,13 @@ def add_seedling(seed_lot_id):
         for item in session.execute(select(func.max(s.id))):
             s_id=item[0]
     result=(f"Successfully added seedling: {s_id}")
+
+
 #Update Seedling Function
-
-
 
 #Add plant function
 
 #Add plant measurement function
-
 
 
 if __name__ == "__main__":
