@@ -78,7 +78,7 @@ def solution_chart():
 def dropdowns():
     pt_types=[]
     sl_ids=[]
-    s_update_ids=[]
+    # s_update_ids=[]
     s_ids=[]
     plant_ids=[]
     stmt=select(pt_meta.c.type).distinct().order_by(pt_meta.c.type)
@@ -99,7 +99,8 @@ def dropdowns():
     #         s_update_ids.append(row[0])
 
     # #New plant, seedling ID
-    stmt=select(s_meta.c.id).where(s_meta.c.germinated='True').order_by(s_meta.c.id)
+    # stmt=select(s_meta.c.id).where(s_meta.c.germinated='True').order_by(s_meta.c.id)
+    stmt=select(s_meta.c.id).order_by(s_meta.c.id)
     with Session(engine) as session:
         for row in session.execute(stmt):
             s_ids.append(row[0])
