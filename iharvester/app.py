@@ -93,7 +93,7 @@ def dropdowns():
             sl_ids.append(row[0])
 
     # #Update seedling, seedling IDs
-    stmt=select(s_meta.c.id).where(s_meta.c.germinated=='').order_by(s_meta.c.id)
+    stmt=select(s_meta.c.id).where(s_meta.c.germinated== None).order_by(s_meta.c.id)
     with Session(engine) as session:
         for row in session.execute(stmt):
             s_update_ids.append(row[0])
