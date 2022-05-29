@@ -191,8 +191,22 @@ def add_seedling(seed_lot_id):
     return jsonify(result)
 
 #Update Seedling Function
+# @app.route('/measurements/updateseedling/<seedling_id>/<germinated>')
+# def update_seedling(seedling_id,germinated):
+#     with Session(engine) as session:
+#         update_seedling=update(s).where(s.id=seedling_id)
+#         session.begin()
+#         try:
+#             session.add(update_seedling)
+#         except:
+#             session.rollback()
+#         else:
+#             session.commit()
+#         for item in session.execute(select(func.max(s.id))):
+#             s_id=item[0]
 
-
+#     result=(f"Successfully updated seedling: {s_id}")
+#     return jsonify(result)
 
 #Add plant function
 
