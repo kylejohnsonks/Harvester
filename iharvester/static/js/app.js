@@ -14,7 +14,7 @@ async function dropdowns(event) {
   };
   for (i=0; i < dropdowns.s_update_ids.length; i++){
     var opt = document.createElement("option");
-    document.getElementById("update_seedling_id").innerHTML += '<option id="' + i + '" value="' + dropdowns.s_ids[i] + '">'+dropdowns.s_ids[i]+'</option>';
+    document.getElementById("update_seedling_id").innerHTML += '<option id="' + i + '" value="' + dropdowns.s_update_ids[i] + '">'+dropdowns.s_update_ids[i]+'</option>';
   };
   for (i=0; i < dropdowns.s_ids.length; i++){
     var opt = document.createElement("option");
