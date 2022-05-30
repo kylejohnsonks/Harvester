@@ -95,10 +95,28 @@ function add_s(event) {
     url+=values[value]+'/';
   }
   url=url.slice(0,-1);
-  console.log('url is '+url)
   fetch(url)
     .then(response => response.json())
     .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
 }
 //Watch for Add Seedling button click
 d3.select("#add_seedling_button").on("click",add_s)
+
+//Update Seedling Function
+function update_s(event) {
+  let values=[]
+  for (const feature of [].slice.call(document.getElementsByClassName("update_seedling"))){
+    values.push(feature.value);
+  }
+  url='/measurements/updateseedling/';
+  for (const value in values) {
+    url+=values[value]+'/';
+  }
+  console.log(url);
+  fetch(url)
+    .then(response => response.json())
+    .then(result=>document.getElementById("result").innerHTML='<h4>'+result+'</h4>');
+}
+
+//Watch for Update Seedling button click
+d3.select("#update_seedling_button").on("click",update_s)

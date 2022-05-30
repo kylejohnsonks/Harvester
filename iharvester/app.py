@@ -1,12 +1,12 @@
 
 # Import dependencies
 from unittest import result
-import datetime
-from datetime import date
+import time, datetime
+from datetime import date, datetime
 from flask import Flask, render_template, redirect, session, jsonify
 import pandas as pd
 import sqlalchemy
-from sqlalchemy import create_engine, func, cast, select, Table, MetaData
+from sqlalchemy import create_engine, func, cast, select, Table, MetaData, update
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 
@@ -191,22 +191,24 @@ def add_seedling(seed_lot_id):
     return jsonify(result)
 
 #Update Seedling Function
-# @app.route('/measurements/updateseedling/<seedling_id>/<germinated>')
-# def update_seedling(seedling_id,germinated):
-#     with Session(engine) as session:
-#         update_seedling=update(s).where(s.id=seedling_id)
-#         session.begin()
-#         try:
-#             session.add(update_seedling)
-#         except:
-#             session.rollback()
-#         else:
-#             session.commit()
-#         for item in session.execute(select(func.max(s.id))):
-#             s_id=item[0]
+@app.route('/measurements/updateseedling/<seedling_id>/<germinated>')
+def update_seedling(seedling_id,germinated):
+    with Session(engine) as session:
+        date=date.today()
+        update_seedling=text("UPDATE seedlings SET germinated=:germinated,germination_date=:date WHERE id=:id")
+        values=[{'germinated':germinated,'date':date,'id':seedling_id}]
+        session.begin()
+        try:
+            session.execute(update_seedling,values)
+        except:
+            session.rollback()
+        else:
+            session.commit()
+        # for item in session.execute(select(func.max(s.id))):
+        #     s_id=item[0]
 
-#     result=(f"Successfully updated seedling: {s_id}")
-#     return jsonify(result)
+    result=(f"Successfully updated seedling: {seedling_id}")
+    return jsonify(result)
 
 #Add plant function
 
