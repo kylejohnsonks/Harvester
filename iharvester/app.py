@@ -16,9 +16,9 @@ from config import db_password
 app = Flask(__name__,template_folder='templates')
 
 # add the code to create the connection to the PostgreSQL database
-host='ec2-3-234-131-8.compute-1.amazonaws.com'
-db_name='d2o18jsmguf1st'
-username='msiswhpqugztpy'
+host='ec2-34-198-186-145.compute-1.amazonaws.com'
+db_name='d9m8nf71u40g9'
+username='qzbbafsjdqekko'
 db_string = f"postgresql://{username}:{db_password}@{host}/{db_name}"
 engine = create_engine(db_string)
 

@@ -1,4 +1,4 @@
 #pgAdmin Password
 local_password = 'SMSRep99'
-db_password = '11ba6576cf03641c3c702c79a77cca1c24d14a1afe031d2b326dd5039a51d2be'
+db_password = '3780f148d744e6350fb7bc5845f3405d64d457debd979d507511f2cf919b2936'
 
